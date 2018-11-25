@@ -1,6 +1,6 @@
 .row {
     max-width: $grid-width;
-    background-color: #eee;
+    // background-color: #eee; // float test
     margin: 0 auto;
 
 
@@ -15,7 +15,7 @@
     // * *= only select contains col-
     // * $= only select ends col-
     [class^='col-'] {
-        background-color: orangered;
+        // background-color: orangered;  // float test
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizental;

@@ -1,0 +1,21 @@
+/* some basic reset */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* ! by default box-sizing is not inherited, this way is forcing elements to inherient box-sizing */
+    box-sizing: inherit 
+}
+
+html {
+    /* * so if user changed the default font size (from 16px to something) it can be convered to the right size */
+    // ! this defined what 1rem is 
+    font-size: 62.5%;
+}
+
+/* set the font in the body cause it can be inherited */
+// ! see typography.scss for more body setup properties
+body {
+    box-sizing: border-box; 
+}

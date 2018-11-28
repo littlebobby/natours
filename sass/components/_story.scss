@@ -23,7 +23,8 @@
         // border-radius: 50%;
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
-        transform: translateX(-3rem) skew(12deg);;
+        transform: translateX(-3rem) skew(12deg);
+        position: relative;
     }
 
     &__text {
@@ -32,5 +33,29 @@
 
     &__img {
         height: 100%;
+        transition: all .5s;
+        transform: translateX(-4rem) scale(1.4);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        text-align: center;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden; // to fix the glitch at the end of movement
+    }
+    &:hover &__caption {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%); // ! note this brightness
     }
 }

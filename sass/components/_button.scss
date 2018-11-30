@@ -1,5 +1,5 @@
 .btn {
-
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -13,8 +13,12 @@
         /* * this relative position is a reference to the absolute position in the after presudo selector */
         position: relative;
         font-size: $default-font-size;
+
+        // change for the button element
+        border: none;
+        cursor: pointer;
     }
-    &:hover {
+    &:hover { 
         transform: translateY(-3px);
         box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
@@ -23,7 +27,9 @@
             opacity: 0;
         }
     }
-    &:active {
+    &:active,
+    &:focus { // ! focus looks the same as hover does -> for accessbility reasons
+        outline: none; // ! then we can change the outline to none 
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }

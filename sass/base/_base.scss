@@ -32,4 +32,9 @@ html {
 // ! see typography.scss for more body setup properties
 body {
     box-sizing: border-box; 
+    padding: 3rem;
+
+    @include respond(tab-port) { 
+        padding: 0;
+    }
 }

@@ -7,6 +7,15 @@
     // ! this selects all the child except the last child, it is better than simply override 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix;
@@ -16,10 +25,18 @@
     // * *= only select contains col-
     // * $= only select ends col-
     [class^='col-'] {
-        // background-color: orangered;  // float test
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizental;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 

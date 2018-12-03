@@ -11,7 +11,21 @@
 html {
     /* * so if user changed the default font size (from 16px to something) it can be convered to the right size */
     // ! this defined what 1rem is 
-    font-size: 62.5%;
+    font-size: 62.5%; // 1rem = 16px
+
+    @include respond(tab-land) { // < 900px
+        font-size: 56.25%; // 1 rem = 9px, 
+    }
+
+    // ! the order matters, so the smaller one will apply when, for example, its 500px
+    @include respond(tab-port) { // < 600px
+        font-size: 50%; // 1 rem = 8px
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1 rem = 12px
+    }
+
 }
 
 /* set the font in the body cause it can be inherited */

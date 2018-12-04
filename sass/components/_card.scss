@@ -12,6 +12,7 @@
         left: 0;
         top: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden; // for safari
         backface-visibility: hidden; // ! make the backside hidden at 180deg
         border-radius: 3px;
         overflow: hidden; // this makes image only show the part within the __side element - raidus so it is rounded

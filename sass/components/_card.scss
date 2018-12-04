@@ -155,8 +155,11 @@
     }
 
 
-
-    @include respond(tab-port) {
+    // @include respond(tab-port) {
+        // !  cause on mobile and tablet devides they cannot hover
+        // ! thus the backside of card cannot be reached
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) { // the opposite is hover: hover
    
         height: auto;
         border-radius: 3px;
